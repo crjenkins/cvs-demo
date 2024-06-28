@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">flickrapp</string>
+    <string name="photo_description">Description</string>
+    <string name="photo_author">Author</string>
+    <string name="photo_published">Published</string>
+    <string name="connection_failed_error">We failed to get a response from the server!</string>
+</resources>
