@@ -102,11 +102,6 @@ fun ImageDetailsView(modifier: Modifier = Modifier,
         val authorLabelContentDescription = stringResource(id = R.string.photo_author_content_description_label)
         val publishedLabelContentDescription = stringResource(id = R.string.photo_published_content_description_label)
 
-        val titleContentDescription = stringResource(id = R.string.photo_title_content_description)
-        val descriptionContentDescription = stringResource(id = R.string.photo_description_content_description)
-        val authorContentDescription = stringResource(id = R.string.photo_author_content_description)
-        val publishedContentDescription = stringResource(id = R.string.photo_published_content_description)
-
         Column(modifier = modifier.fillMaxWidth()) {
             PhotoImageView(
                 modifier = modifier.align(alignment = Alignment.CenterHorizontally),
@@ -117,9 +112,6 @@ fun ImageDetailsView(modifier: Modifier = Modifier,
                 text = photo.title, style = Typography.titleLarge, modifier = Modifier
                     .padding(16.dp)
                     .align(alignment = Alignment.CenterHorizontally)
-                    .semantics {
-                        contentDescription = titleContentDescription
-                    }
             )
             Text(
                 text = stringResource(id = R.string.photo_description),
@@ -135,9 +127,6 @@ fun ImageDetailsView(modifier: Modifier = Modifier,
                 style = Typography.bodyLarge,
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp, bottom = 16.dp)
-                    .semantics {
-                        contentDescription = descriptionContentDescription
-                    }
             )
             Text(
                 text = stringResource(id = R.string.photo_author),
@@ -153,9 +142,6 @@ fun ImageDetailsView(modifier: Modifier = Modifier,
                 style = Typography.bodyLarge,
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp, bottom = 16.dp)
-                    .semantics {
-                        contentDescription = authorContentDescription
-                    }
             )
             Text(
                 text = stringResource(id = R.string.photo_published),
@@ -171,9 +157,6 @@ fun ImageDetailsView(modifier: Modifier = Modifier,
                 style = Typography.bodyLarge,
                 modifier = Modifier
                     .padding(start = 16.dp, end = 16.dp, bottom = 32.dp)
-                    .semantics {
-                        contentDescription = publishedContentDescription
-                    }
             )
         }
     }
@@ -201,7 +184,9 @@ fun SearchView(search:String, onSearchChanged: (search:String) -> Unit, modifier
         .fillMaxWidth()
         .semantics {
             contentDescription = searchContentDescription
-        })
+        },
+        placeholder = { Text(text = stringResource(id = R.string.search_hint))  }
+    )
 }
 
 @Composable
