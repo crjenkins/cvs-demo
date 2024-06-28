@@ -1,17 +1,9 @@
 package com.silentgoat.flickrapp.gallery
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import com.squareup.moshi.Json
-import java.text.SimpleDateFormat
 import java.time.Instant
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
 import java.time.temporal.ChronoUnit
 import java.util.Date
-import java.util.Locale
-
 
 data class GalleryData(
     val title:String,

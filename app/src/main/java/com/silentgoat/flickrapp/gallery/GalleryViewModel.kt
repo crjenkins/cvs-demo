@@ -1,5 +1,6 @@
 package com.silentgoat.flickrapp.gallery
 
+import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -66,6 +67,10 @@ data class GalleryViewModelState(
 
 @HiltViewModel
 class GalleryViewModel @Inject constructor(private val api: IGalleryApi): ViewModel() {
+    companion object {
+        val TAG = "GalleryViewModel"
+    }
+
     private var isInit: Boolean = false
 
     private val viewModelState = MutableStateFlow(
@@ -119,7 +124,6 @@ class GalleryViewModel @Inject constructor(private val api: IGalleryApi): ViewMo
                 .filter { it.isNotEmpty() }
                 .debounce(1000L)
                 .collectLatest {
-
                     viewModelState.update { it.copy(isLoading = true) }
                     try {
                         val gallery = api.search(it)
@@ -130,6 +134,7 @@ class GalleryViewModel @Inject constructor(private val api: IGalleryApi): ViewMo
                             )
                         }
                     } catch (ex: Exception) {
+                        Log.e(TAG, ex.message ?: "")
                         viewModelState.update { it.copy(error = GalleryError.CONNECTION_FAILED) }
                     }
                 }

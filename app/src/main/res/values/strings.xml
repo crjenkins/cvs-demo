@@ -4,4 +4,18 @@
     <string name="photo_author">Author</string>
     <string name="photo_published">Published</string>
     <string name="connection_failed_error">We failed to get a response from the server!</string>
+    <string name="search_content_description">Search for photos.</string>
+    <string name="no_search_results">No search results!</string>
+    <string name="no_search_results_content_description">There are no search results.</string>
+    <string name="photo_content_description">Photo of</string>
+    <string name="loading_bar_content_description">Loading</string>
+    <string name="image_details_content_description">Details of photo bottomsheet</string>
+    <string name="photo_description_content_description_label">Description header</string>
+    <string name="photo_author_content_description_label">Author header</string>
+    <string name="photo_published_content_description_label">Published header</string>
+
+    <string name="photo_title_content_description">Photo title is</string>
+    <string name="photo_description_content_description">Photo description is</string>
+    <string name="photo_author_content_description">Photo author is</string>
+    <string name="photo_published_content_description">Photo published on</string>
 </resources>
